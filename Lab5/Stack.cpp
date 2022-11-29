@@ -3,12 +3,14 @@
 
 using namespace std;
 
+//constructor
 template<class DataType>
 Stack<DataType>::Stack(int stackMaxSize){
 
 top = nullptr;
 maxSize = stackMaxSize;
 numNodes = 0;
+
 }
 
 template<class DataType>
