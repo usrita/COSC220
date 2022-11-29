@@ -29,18 +29,16 @@ bool Stack<DataType>::isFull()const{
         return false;
 }
 
-/*void push(const DataType); // push a node to the top of the stack
-    void pop();                // pop a node from the top of the stack
-    DataType topStack() const; // return data from the top of the stack
-*/
-
 // push: adds a node to the top of the stack
 template<class DataType>
 void Stack<DataType>::push(const DataType){
+
+    if (isFull == true)
+        cout << " Stack is full, cannot push new data \n";
     
+    else{
     //Create a pointer to point to the top of the 
     //stack and a pointer to point to the new node
-
     StackNode<DataType> *new_node = new StackNode<DataType>;
     //set the new nodes data value equal to the data passed to the function
     
@@ -54,11 +52,13 @@ void Stack<DataType>::push(const DataType){
     //add the node to the top of the stack
     else{
         new_node->next = top;
-        top = new_node;  
+        top = new_node;
+        delete new_node;  
     }
 
     //increment number of nodes
     numNodes++;
+    }
 }
 // pop, removes top node from stack
 template<class DataType>

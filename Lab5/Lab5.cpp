@@ -24,25 +24,59 @@ int main()
 {
     //Stack<DataType> obj;
     char stack_choice;
-    int sizemax;
+    int sizemax, menu;
+
     cout << "Create integer (i) stack or student (s) stack? \n";
 
     if (stack_choice == 'i'){
         Stack<int> iStack; // a stack with type int
-        template<class int>
-        Stack(sizemax);
+        
+        cout << "Enter max size of int stack \n";
+        cin >> sizemax;
+
+        Stack<int> (sizemax);
     }
     else if(stack_choice == 's'){
         Stack<Students*> sStack;  // a stack with student data type do I need to make a it a pointer?? and why
+
+        cout << "Enter max size of int stack \n";
+        cin >> sizemax;
+        
+        Stack<Students*> (sizemax);
     }
-    else{
-        cout << "Invalid input! \n" <<
-            "i or s? \n";
-        cin >> stack_choice; 
-    }
+    else
+        cout << "Invalid input! \n" << "Goodbye! \n";
 
     Displaymenu();
 
+    cout << "What would you like to do ?\n";
+    cin >> menu;
+
+    switch (menu)
+    {
+        // push to top
+        case 1:
+        int push_num;
+
+        cout<< "Enter int to push: \n";
+        cin >> push_num;
+        iStack.push(push_num);
+        break;
+
+        // pop top
+        case 2:
+        iStack.pop();
+        break;
+
+        // print top
+        case 3:
+        iStack.topStack();
+        break;
+
+        // Quit
+        case 4:
+        cout << "Goodbye! \n";
+    }
     
 
 }
