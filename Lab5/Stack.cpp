@@ -14,6 +14,20 @@ numNodes = 0;
 }
 
 template<class DataType>
+Stack<DataType>::~Stack(){
+
+    StackNode<DataType> *delNode = nullptr;
+
+    // delete node one by one
+    for (int i = 0; i < maxSize; i++)
+    {
+        delNode = top;
+        top = delNode->next;
+        delete delNode;
+    }
+}
+
+template<class DataType>
 bool Stack<DataType>::isEmpty()const{
     if (top == NULL)
         return true;
@@ -31,34 +45,37 @@ bool Stack<DataType>::isFull()const{
 
 // push: adds a node to the top of the stack
 template<class DataType>
-void Stack<DataType>::push(const DataType){
+void Stack<DataType>::push(const DataType data){
 
-    if (isFull == true)
+    if (isFull() == true){
         cout << " Stack is full, cannot push new data \n";
+        }
     
     else{
-    //Create a pointer to point to the top of the 
-    //stack and a pointer to point to the new node
-    StackNode<DataType> *new_node = new StackNode<DataType>;
-    //set the new nodes data value equal to the data passed to the function
+        cout << "in else!\n";
+        //Create a pointer to point to the top of the 
+        //stack and a pointer to point to the new node
+        StackNode<DataType> *new_node = new StackNode<DataType>;
+
+        //set the new nodes data value equal to the data passed to the function
     
-    new_node->data = data;
-    new_node-next = nullptr;
+        new_node->data = data;
+        new_node->next = nullptr;
 
-    //check if the stack is empty
-    if(top == NULL){
-        top = new_node;
-    }
-    //add the node to the top of the stack
-    else{
-        new_node->next = top;
-        top = new_node;
-        delete new_node;  
-    }
+        //check if the stack is empty
+        if(top == nullptr){
+            top = new_node;
+        }
+        //add the node to the top of the stack
+        else{
+            new_node->next = top;
+            top = new_node;
+            delete new_node;  
+        }
 
-    //increment number of nodes
-    numNodes++;
-    }
+        //increment number of nodes
+        numNodes++;
+        }
 }
 // pop, removes top node from stack
 template<class DataType>
@@ -82,3 +99,11 @@ void Stack<DataType>::pop(){
     }
 
 }
+
+
+template<class DataType>
+DataType Stack<DataType>::topStack() const{
+
+    return top->data;
+}
+

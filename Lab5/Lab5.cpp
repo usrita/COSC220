@@ -6,9 +6,10 @@
 
 using namespace std;
 
-//template class<DataType>
+/* //template class<DataType>
 Stack<Students> sStack;  // a stack with student data type do I need to make a it a pointer?? and why
 Stack<int> iStack; // a stack with type int
+ */
 
 /*
 Menu: select int or student data type
@@ -25,33 +26,23 @@ int main()
     //Stack<DataType> obj;
     char stack_choice;
     int sizemax, menu;
-
+    Stack<int> iStack(sizemax);
+    
     cout << "Create integer (i) stack or student (s) stack? \n";
-
+    cin >> stack_choice;
+    
     if (stack_choice == 'i'){
-        Stack<int> iStack; // a stack with type int
-        
-        cout << "Enter max size of int stack \n";
-        cin >> sizemax;
-
-        Stack<int> (sizemax);
-    }
-    else if(stack_choice == 's'){
-        Stack<Students*> sStack;  // a stack with student data type do I need to make a it a pointer?? and why
 
         cout << "Enter max size of int stack \n";
         cin >> sizemax;
-        
-        Stack<Students*> (sizemax);
-    }
-    else
-        cout << "Invalid input! \n" << "Goodbye! \n";
+        Stack<int> iStack(sizemax);
 
     Displaymenu();
 
     cout << "What would you like to do ?\n";
-    cin >> menu;
+    cin >> menu;    
 
+while (menu != 4){
     switch (menu)
     {
         // push to top
@@ -72,13 +63,29 @@ int main()
         case 3:
         iStack.topStack();
         break;
-
-        // Quit
-        case 4:
-        cout << "Goodbye! \n";
     }
-    
 
+    Displaymenu();
+    cout << "What would you like to do? \n";
+    cin >> menu;
+}
+
+
+
+    }
+    else if(stack_choice == 's'){
+        cout << "Enter max size of int stack \n";
+        cin >> sizemax;
+
+        Stack<Students*> sStack(sizemax);  // a stack with student data type do I need to make a it pointer
+
+        //Stack<Students*> (sizemax);
+    }
+    else
+        cout << "Invalid input! \n" << "Goodbye! \n";
+
+
+    return 0;
 }
 
 //Display menu
