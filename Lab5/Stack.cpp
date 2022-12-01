@@ -13,23 +13,24 @@ numNodes = 0;
 
 }
 
+// Destructor
 template<class DataType>
 Stack<DataType>::~Stack(){
 
-    StackNode<DataType> *delNode = nullptr;
+    StackNode<DataType> *delNode = nullptr, *current = top;
 
     // delete node one by one
-    for (int i = 0; i < maxSize; i++)
+    for (int i = 0; i < numNodes; i++)
     {
-        delNode = top;
-        top = delNode->next;
+        delNode = current;
+        current = current->next;
         delete delNode;
     }
 }
 
 template<class DataType>
 bool Stack<DataType>::isEmpty()const{
-    if (top == NULL)
+    if (numNodes == 0)
         return true;
     else
         return false;
@@ -52,7 +53,6 @@ void Stack<DataType>::push(const DataType data){
         }
     
     else{
-        cout << "in else!\n";
         //Create a pointer to point to the top of the 
         //stack and a pointer to point to the new node
         StackNode<DataType> *new_node = new StackNode<DataType>;
@@ -70,7 +70,6 @@ void Stack<DataType>::push(const DataType data){
         else{
             new_node->next = top;
             top = new_node;
-            delete new_node;  
         }
 
         //increment number of nodes
