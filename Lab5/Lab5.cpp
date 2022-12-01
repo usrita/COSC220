@@ -70,8 +70,6 @@ while (menu != 4){
     cin >> menu;
 }
 
-
-
     }
     else if(stack_choice == 's'){
         cout << "Enter max size of int stack \n";
