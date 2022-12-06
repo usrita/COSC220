@@ -18,8 +18,8 @@ Node::Node(){
 // define print function
 void Node::printNode(){
 
-    cout << idNumber << endl;
-    cout << firstNAme << endl;
-    cout << lastNAme << endl;
+    cout << "id: " <<idNumber;
+    cout << "First:" << firstNAme;
+    cout << "LAst: " <<  lastNAme << endl;
     
 }

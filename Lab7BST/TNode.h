@@ -5,10 +5,12 @@
 using namespace std;
 
 // struct or class?? 
-struct TNode{
+class TNode{
 
+    friend class BST;
+    
     private:
-    TNode *parent;  //pointer to parent node
+    TNode *parent;  //pointer to parent node ROOTNODE
     TNode *left;    //pointer to left child
     TNode *right;   //pointer to right child
     int data;        //space will be used with template for lab8
