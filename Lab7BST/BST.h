@@ -6,12 +6,13 @@ using namespace std;
 class BST{
 
     private:
-    BST * root; // do I set this equal to parent??
-    void maximum(BST* tree);
-    void minimum(BST* tree);
-    void successor(BST* tree);
-    void predecessor(BST* tree);
-    BST createNode();
+    TNode* root; // do I set this equal to parent??
+    TNode* maximum(TNode* tree);
+    TNode* minimum(TNode* tree);
+    TNode* successor(TNode* tree);
+    TNode* predecessor(TNode* tree);
+    TNode* createNode();
+    void clearTree(TNode*);
 
     public: 
     // constructor
@@ -20,12 +21,14 @@ class BST{
     // destructor 
     ~BST();
 
-    BST inOrder(BST* tree);
-    BST preOrder(BST* tree);
-    BST postOrder(BST* tree);
-    BST bstInsert();
-    BST bstDelete();
-    BST bstSearch();
+    void inOrder(TNode* );
+    void preOrder(TNode* );
+    void postOrder(TNode* );
+    void bstInsert();
+    void bstDelete(TNode *);
+    TNode* bstSearch(int value);
+
+    TNode* getRoot();
 
 };
 

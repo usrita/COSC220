@@ -11,21 +11,14 @@ class TNode{
     
     private:
     TNode *parent;  //pointer to parent node ROOTNODE
-    TNode *left;    //pointer to left child
-    TNode *right;   //pointer to right child
+    TNode *leftchild;    //pointer to left child
+    TNode *rightchild;   //pointer to right child
     int data;        //space will be used with template for lab8
 
     public:
     //constructor 
-    TNode(){
-
-    }
-    void printNode(){
-
-    }
-
-
-
+    TNode();
+    void printNode();
 };
 
 #endif
