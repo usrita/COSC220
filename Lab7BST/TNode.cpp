@@ -14,22 +14,22 @@ TNode:: TNode(){
 
 void TNode:: printNode(){
     if(parent != NULL)
-        cout << "Parent:"<< parent->data << endl;
+        cout << "Parent: "<< parent->data << endl;
     else
-        cout << "Parent:NULL\n";
+        cout << "Parent: NULL\n";
 
     if (leftchild != NULL)
     {
-        cout << "Leftchild:" << leftchild->data << endl;
+        cout << "leftchild: " << leftchild->data << endl;
     }
     else
-        cout << "Leftchild:" << endl;
+        cout << "Leftchild: NULL" << endl;
 
     if(rightchild != NULL)
-        cout << "RIghtchild: " << rightchild->data<< endl;
+        cout << "Rightchild: " << rightchild->data<< endl;
 
     else
-        cout << "Rightchild:\n";
+        cout << "Rightchild: NULL\n";
     
     cout << "Data: "<< data << endl << endl;
 }
