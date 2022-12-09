@@ -2,6 +2,9 @@
 
 using namespace std;
 
+#ifndef HEAP_H
+#define HEAP_H
+
 class Heap{
 
     private:
@@ -12,16 +15,18 @@ class Heap{
         int parent(int i); //return index of parent of i
         int leftChild(int i); //return index of left child of i
         int rightChild(int i); //return index of right child of i
-        int heapify(int i); // ?
+        void heapify(int i); // ?
+        void buildHeap();
 
-        // member functions
-        
+    public:
+        // member utility functions
         Heap(); // constructor
-        Heap buildheap(); // ?
-        int insert(); // insert new data into the heap
+        void insert(); // insert new data into the heap
         void heapSort();
-        void extractmax(); //extract maximum value from the heap
+        int extractmax(); //extract maximum value from the heap
         int maximum(); // return maximum value in the heap
         void printHeap(); //print heap
 
 };
+
+#endif
