@@ -9,7 +9,7 @@ class Heap{
 
     private:
 
-        int max[100];
+        int A[100]; //max space of array is 100
         int heapSize = 0;
         
         int parent(int i); //return index of parent of i

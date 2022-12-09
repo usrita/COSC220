@@ -17,6 +17,27 @@ int main(){
         DisplayMenu();
     }
 
+    switch(choice){
+        
+        //insert new element into heap
+        case 1:
+
+        //print max val
+        case 2:
+
+        //extract max from heap
+        case 3:
+
+        //print heap
+        case 4:
+
+        //sort heap and print sorted heap
+        case 5:
+
+
+
+    }
+
 
 
 
