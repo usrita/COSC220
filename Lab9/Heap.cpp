@@ -13,11 +13,11 @@ Heap::Heap(){
 
 int Heap::parent(int i){
 
-    if (i == 0){
-        cout << "No parent";
-        return;
-    }
-    if (i % 2 ==0) // even
+    // if (i == 0){
+    //     cout << "No parent";
+    //    // return; ??
+    // }
+    if (i % 2 == 0) // even
         return ((i-1)/2);
     else        //odd
         return (i /2);

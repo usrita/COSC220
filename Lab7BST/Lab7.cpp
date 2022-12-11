@@ -14,6 +14,7 @@ int main(){
     BST tree;
 
     while (user_input != 4){
+        
         DisplayMenu();
         cout << "What would you like to do? \n";
         cin >> user_input;
