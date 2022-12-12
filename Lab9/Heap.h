@@ -8,7 +8,6 @@ using namespace std;
 class Heap{
 
     private:
-
         int A[100]; //max space of array is 100
         int heapSize = 0;
         

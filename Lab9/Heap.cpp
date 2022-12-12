@@ -5,7 +5,7 @@
 using namespace std;
 
 Heap::Heap(){
-        int arr[] = {4,12,3,19,23,5,32,11,2,24};
+        int A []= {4,12,3,19,23,5,32,11,2,24}; // no error lik this but when I just do A = {} error
         heapSize = 10;
 
         // call builheap function to build heap from array
@@ -13,14 +13,15 @@ Heap::Heap(){
 
 int Heap::parent(int i){
 
-    // if (i == 0){
-    //     cout << "No parent";
-    //    // return; ??
-    // }
+    if (i == 0){
+        cout << "No parent";
+        return 0; // parent will say 0?
+    }
     if (i % 2 == 0) // even
         return ((i-1)/2);
     else        //odd
-        return (i /2);
+        return (i /2);    
+
 }
 
 int Heap:: leftChild(int i){
@@ -128,10 +129,23 @@ int Heap::extractmax(){
 // print heap
 void Heap:: printHeap(){
 
+    // pointer of array
+    int * Aptr = A;
+    int parentt, left, right;
+
     for (int i = 0; i < heapSize; i++ ){
-        cout << A[i] << "\n" << "Parent: "<<
-            parent(i) << "\n" << "Leftchild: "<<
-            leftChild(i) << "\n" << "Rightchild: "<<
-            rightChild(i) << "\n\n";
+
+        //set value at location obtained from parent function to parentt variable
+        parentt = A[parent(i)];
+        left = A[leftChild(i)];
+        right = A[rightChild(i)];
+
+        // if i use Aptr[i] or A[i] it keeps printing random values instead of elements
+        // from the constructor array..
+        //cout << Aptr[i] << "\n" <<
+            cout << Aptr[i] << "\n" <<
+            "Parent: "<< parentt << "\n" <<
+            "Leftchild: "<< left << "\n" <<
+            "Rightchild: "<< right<< "\n\n";
     }
 }
