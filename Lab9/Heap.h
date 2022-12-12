@@ -25,6 +25,7 @@ class Heap{
         int extractmax(); //extract maximum value from the heap
         int maximum(); // return maximum value in the heap
         void printHeap(); //print heap
+        void printArray(); //to print sorted result
 
 };
 

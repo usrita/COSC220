@@ -18,6 +18,7 @@ int main(){
         while(choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5){
             cout << "invalid choice!\n";
             DisplayMenu();
+            cin >> choice;
         }
 
         switch(choice){
@@ -29,12 +30,13 @@ int main(){
 
             //print max val
             case 2:
-                heap.maximum();
+                cout << "Maximum of heap: " << heap.maximum() << endl;
                 break;
 
             //extract max from heap
             case 3:
                 heap.extractmax();
+                cout << "Max removed from heap. \n";
                 break;
 
             //print heap
@@ -45,18 +47,22 @@ int main(){
             //sort heap and print sorted heap
             case 5:
                 heap.heapSort();
+                //heap.printHeap();
+                heap.printArray();
                 heap.printHeap();
                 break;
         }
     }
 
+    cout << "Goodbye!\n";
+
     return 0;
 }
 void DisplayMenu(){
-    cout << "1. Insert element into the heap. \n"<<
+    cout << "\n1. Insert element into the heap. \n"<<
         "2. Print Maximum value. \n" <<
         "3. Extract maximum value from the heap. \n"<<
-        "4. Print heap \n "<<
+        "4. Print heap \n"<<
         "5. Heap Sort, print sorted results and exit.\n"<<
         "6. Quit.\n";
 

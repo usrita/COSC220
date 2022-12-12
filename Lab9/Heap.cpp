@@ -5,8 +5,10 @@
 using namespace std;
 
 Heap::Heap(){
-        int A []= {4,12,3,19,23,5,32,11,2,24}; // no error lik this but when I just do A = {} error
+        int B[10] = {4,12,3,19,23,5,32,11,2,24}; // no error lik this but when I just do A = {} error
         heapSize = 10;
+        for (int i = 0; i < heapSize; i++)
+            A[i] = B[i];
 
         // call builheap function to build heap from array
     }
@@ -14,7 +16,7 @@ Heap::Heap(){
 int Heap::parent(int i){
 
     if (i == 0){
-        cout << "No parent";
+        //cout << "No parent";
         return 0; // parent will say 0?
     }
     if (i % 2 == 0) // even
@@ -86,18 +88,18 @@ void Heap:: insert(){
 }
 //heapsort
 void Heap:: heapSort(){
-    int temp;
+    int temp, size;
+    size = heapSize;
     buildHeap();
     
-    for (int i = heapSize-1; i >= 1; i--){
+    for (int i = size-1; i >= 1; i--){
         temp = A[0];
         A[0] = A[i];
         A[i] = temp;
 
-        heapSize--;
+        size--;
         heapify(0);
     }
-
 }
 
 //find maximum value in heap
@@ -133,19 +135,31 @@ void Heap:: printHeap(){
     int * Aptr = A;
     int parentt, left, right;
 
+    cout << endl;
     for (int i = 0; i < heapSize; i++ ){
 
         //set value at location obtained from parent function to parentt variable
-        parentt = A[parent(i)];
+
+        /*parentt = A[parent(i)];
         left = A[leftChild(i)];
-        right = A[rightChild(i)];
+        right = A[rightChild(i)];*/
 
         // if i use Aptr[i] or A[i] it keeps printing random values instead of elements
         // from the constructor array..
         //cout << Aptr[i] << "\n" <<
-            cout << Aptr[i] << "\n" <<
-            "Parent: "<< parentt << "\n" <<
-            "Leftchild: "<< left << "\n" <<
-            "Rightchild: "<< right<< "\n\n";
+            cout << "Node: " << Aptr[i] << "\n";
+            if (parent(i) < heapSize && i != 0)
+                cout << "Parent: "<< A[parent(i)] << "\n";
+            if (leftChild(i) < heapSize)
+                cout << "Leftchild: "<< A[leftChild(i)] << "\n";
+            if (rightChild(i) < heapSize)
+                cout << "Rightchild: "<< A[rightChild(i)] << "\n";
+            cout << endl;
     }
+}
+
+
+void Heap::printArray() {
+    for (int i = 0; i < heapSize; i++)
+        cout << A[i] << ", ";
 }
