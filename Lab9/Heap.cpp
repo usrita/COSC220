@@ -124,12 +124,14 @@ int Heap::  maximum(){
 
 //extract max
 int Heap::extractmax(){
+    // set root to max value thru build
     buildHeap();
     /*int index_max;
     for (int i = 0; i <= heapSize; i++){
         if (A[i] == maximum())
             index_max = i;
     }*/
+
     int max_value = A[0];
     A[0] = A[heapSize-1];
     A[heapSize-1] = 0;

@@ -37,7 +37,7 @@ int main(){
             case 3:
                 //int num = heap.maximum();
                 heap.extractmax();
-                cout << "Max removed from heap: "<< endl;
+                cout << "Max was removed from heap."<< endl;
                 break;
 
             //print heap
