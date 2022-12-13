@@ -49,7 +49,7 @@ int main(){
             case 5:
                 heap.heapSort();
                 heap.printHeap();
-                break;
+                return 0;
         }
     }
 
