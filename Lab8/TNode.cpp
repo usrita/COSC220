@@ -4,15 +4,17 @@
 using namespace std;
 
 //constructor
-TNode:: TNode(){
+template <class T>
+TNode<T>:: TNode(){
 
     parent = nullptr;
     leftchild = nullptr;
     rightchild = nullptr;
-    data = 0;
+    data = NULL; //null is fine for anydatatype variable? Template variable?
 }
 
-void TNode:: printNode(){
+template <class T>
+void TNode <T>:: printNode(){
     if(parent != NULL)
         cout << "Parent: "<< parent->data << endl;
     else

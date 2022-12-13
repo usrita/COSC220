@@ -14,10 +14,10 @@ Students::Students(){
     cin >> iDnumber;
 
 }
-// print student function
-void Students::printStudent(){
-    cout << "Last name: " << lastname << endl;
-    cout << "First name: " << firstname << endl;
-    cout << "ID number: " << iDnumber << endl;
+// // print student function
+// void Students::printStudent(){
+//     cout << "Last name: " << lastname << endl;
+//     cout << "First name: " << firstname << endl;
+//     cout << "ID number: " << iDnumber << endl;
 
-}
+// }

@@ -1,23 +1,23 @@
 #include <iostream>
+using namespace std;
+
 #ifndef TNODE_H
 #define TNODE_H
 
-using namespace std;
-
-// struct or class?? 
+template <class T>
 class TNode{
 
-    friend class BST;
+    template<class> friend class BST;
     
     private:
     TNode *parent;  //pointer to parent node ROOTNODE
     TNode *leftchild;    //pointer to left child
     TNode *rightchild;   //pointer to right child
-    int data;        //space will be used with template for lab8
+    T data;        // data, anytype
 
     public:
-    //constructor 
-    TNode();
+    
+    TNode(); //constructor initilize all ptrs as NULL
     void printNode();
 };
 

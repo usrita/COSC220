@@ -1,6 +1,8 @@
 #include "Student.cpp"
-#include "Lab5.cpp"
-#include "Stack.cpp"
+#include "Lab8.cpp"
+#include "TNode.cpp"
+#include "BST.cpp"
+
 
 template class Stack<Students*>;
 template class StackNode<Students*>;

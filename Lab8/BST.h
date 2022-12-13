@@ -3,10 +3,11 @@
 
 using namespace std; 
 
+template <class T>
 class BST{
 
     private:
-    TNode* root; // do I set this equal to parent??
+    TNode* root; // points to root node of BST
     TNode* maximum(TNode* tree);
     TNode* minimum(TNode* tree);
     TNode* successor(TNode* tree);
@@ -15,11 +16,8 @@ class BST{
     void clearTree(TNode*);
 
     public: 
-    // constructor
-    BST();
-
-    // destructor 
-    ~BST();
+    BST();// constructor
+    ~BST(); // destructor 
 
     void inOrder(TNode* );
     void preOrder(TNode* );

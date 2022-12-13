@@ -4,29 +4,32 @@
 using namespace std;
 
 //constructor
-BST:: BST(){
+template <class T>
+BST<T>:: BST(){
 
     root = NULL;
 }
-
-BST:: ~BST(){
+//destructor
+template <class T>
+BST<T>:: ~BST(){
     clearTree(root);
 }
 
-void BST :: clearTree(TNode* node){
+template<class T>
+void BST<T> :: clearTree(TNode* node){
     if (node != NULL){
-
         if(node->leftchild == NULL && node->rightchild == NULL){
             delete node;
         }
         else{
-        clearTree(node->leftchild);
-        clearTree(node->rightchild);
+            clearTree(node->leftchild);
+            clearTree(node->rightchild);
         }
     }
 }
 
-TNode* BST:: maximum(TNode* node){
+template <class T>
+TNode* BST<T>:: maximum(TNode* node){
     TNode * temp = node;
 
     while(temp->rightchild != NULL){
@@ -36,7 +39,8 @@ TNode* BST:: maximum(TNode* node){
 }
 
 // to find successor
-TNode* BST:: minimum(TNode* node){
+template <class T>
+TNode* BST<T>:: minimum(TNode* node){
 
 
     TNode * temp = node;
@@ -46,8 +50,8 @@ TNode* BST:: minimum(TNode* node){
     }
     return temp;
 }
-
-TNode* BST:: successor(TNode * node){
+template <class T>
+TNode* BST<T>:: successor(TNode * node){
     TNode* temp1 = node;
     TNode* temp2 = nullptr;
 
@@ -66,11 +70,11 @@ TNode* BST:: successor(TNode * node){
     }
 
 }
-
-TNode* BST :: getRoot(){
+template <class T>
+TNode* BST <T>:: getRoot(){
     return root;
 }
-
+template <class T>
 TNode* BST :: createNode(){
 
     TNode* newnode = new TNode();
@@ -81,9 +85,8 @@ TNode* BST :: createNode(){
     return newnode;
 }
 
-
-
-void BST :: inOrder(TNode* node){
+template <class T>
+void BST<T> :: inOrder(TNode* node){
 
    if(node!= nullptr){
     inOrder(node->leftchild);
@@ -93,8 +96,8 @@ void BST :: inOrder(TNode* node){
    }
 
 }
-
-void BST :: preOrder(TNode* node){
+template <class T>
+void BST<T> :: preOrder(TNode* node){
 
    if(node!= nullptr){
     
@@ -105,8 +108,8 @@ void BST :: preOrder(TNode* node){
    }
 
 }
-
-void BST :: postOrder(TNode* node){
+template <class T>
+void BST <T>:: postOrder(TNode* node){
 
    if(node!= nullptr){
     
@@ -119,6 +122,7 @@ void BST :: postOrder(TNode* node){
 }
 
 //search
+template <class T>
 TNode* BST :: bstSearch(int value){
 
     TNode* temp = root;
@@ -133,8 +137,8 @@ TNode* BST :: bstSearch(int value){
     return temp;
 
 }
-
-void BST :: bstInsert(){
+template <class T>
+void BST<T> :: bstInsert(){
 
     TNode* newnode = createNode();
     // keep track of current node
@@ -174,8 +178,8 @@ void BST :: bstInsert(){
         temp2->rightchild = newnode;
 
 }
-
-void BST :: bstDelete(TNode* delnode){
+template <class T>
+void BST<T>:: bstDelete(TNode*<T> delnode){
 
     // no node in tree
     // if(bstSearch(delnode->data)== NULL){
