@@ -41,16 +41,15 @@ int Heap:: rightChild(int i){
 
 void Heap:: heapify(int i){
     int Largest;
-
     int L = leftChild(i);
     int R = rightChild(i);
     int temp;
 
-    if (L < heapSize-1 && A[L] > A[i]){   
+    if (L < heapSize && A[L] > A[i]){   
         Largest = L;
     } else
         Largest = i;
-    if (R < heapSize-1 && A[R] > A[Largest])
+    if (R < heapSize && A[R] > A[Largest])
         Largest = R;
 
     if(Largest != i){
@@ -98,7 +97,7 @@ void Heap:: heapSort(){
     buildHeap();
     
     for (int i = size-1; i >= 1; i--){
-
+        
         temp = A[0];
         A[0] = A[i];
         A[i] = temp;
