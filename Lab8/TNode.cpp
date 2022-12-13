@@ -5,12 +5,12 @@ using namespace std;
 
 //constructor
 template <class T>
-TNode<T>:: TNode(){
+TNode<T>:: TNode(T node){
 
     parent = nullptr;
     leftchild = nullptr;
     rightchild = nullptr;
-    data = NULL; //null is fine for anydatatype variable? Template variable?
+    data = node; 
 }
 
 template <class T>

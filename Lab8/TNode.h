@@ -16,9 +16,10 @@ class TNode{
     T data;        // data, anytype
 
     public:
-    
-    TNode(); //constructor initilize all ptrs as NULL
+    TNode(T); //constructor initilize all ptrs as NULL
     void printNode();
+    template <class DT>
+    friend class BST;
 };
 
 #endif

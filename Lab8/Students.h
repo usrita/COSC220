@@ -9,13 +9,15 @@ struct Students{
     char lastname[20]; //student last name
     char firstname[20]; //student first name
     int iDnumber;       // student id number
-    Students(); //constructor
+    Students(int,int); 
+    Students(){} //constructor
+    Students(int);
     bool operator == (const Students); // compare ID number 
     bool operator > (const Students);
     bool operator < (const Students);
 
     //output operator 
-    friend ostream& operator << (ostream& stream, const Students &student);
+    friend ostream& operator << (ostream& stream, const Students *student);
     //void printStudent();    //print student information
 
 };

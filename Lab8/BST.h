@@ -1,5 +1,7 @@
-#include <iostream>
+#ifndef BST_H
+#define BST_H
 #include "TNode.h"
+#include"Students.h"
 
 using namespace std; 
 
@@ -7,26 +9,27 @@ template <class T>
 class BST{
 
     private:
-    TNode* root; // points to root node of BST
-    TNode* maximum(TNode* tree);
-    TNode* minimum(TNode* tree);
-    TNode* successor(TNode* tree);
-    TNode* predecessor(TNode* tree);
-    TNode* createNode();
-    void clearTree(TNode*);
+    TNode<T> *root; // points to root node of BST
+    TNode<T> *maximum(TNode<T>* tree);
+    TNode<T>* minimum(TNode<T>* tree);
+    TNode<T>* successor(TNode<T>* tree);
+    TNode<T>* predecessor(TNode<T>* tree);
+    TNode<T>* createNode();
+    void clearTree(TNode<T>*);
 
     public: 
     BST();// constructor
     ~BST(); // destructor 
 
-    void inOrder(TNode* );
-    void preOrder(TNode* );
-    void postOrder(TNode* );
+    void inOrder(TNode<T>* );
+    void preOrder(TNode<T>* );
+    void postOrder(TNode<T>* );
     void bstInsert();
-    void bstDelete(TNode *);
-    TNode* bstSearch(int value);
+    void bstDelete(TNode<T> *);
+    TNode<T>* bstSearch(int value);
 
-    TNode* getRoot();
+    TNode<T>* getRoot();
 
 };
 
+#endif

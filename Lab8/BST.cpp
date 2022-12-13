@@ -16,7 +16,7 @@ BST<T>:: ~BST(){
 }
 
 template<class T>
-void BST<T> :: clearTree(TNode* node){
+void BST<T> :: clearTree(TNode<T> *node){
     if (node != NULL){
         if(node->leftchild == NULL && node->rightchild == NULL){
             delete node;
@@ -29,7 +29,7 @@ void BST<T> :: clearTree(TNode* node){
 }
 
 template <class T>
-TNode* BST<T>:: maximum(TNode* node){
+TNode<T>* BST<T>:: maximum(TNode<T>* node){
     TNode * temp = node;
 
     while(temp->rightchild != NULL){
@@ -40,7 +40,7 @@ TNode* BST<T>:: maximum(TNode* node){
 
 // to find successor
 template <class T>
-TNode* BST<T>:: minimum(TNode* node){
+TNode<T>* BST<T>:: minimum(TNode<T>* node){
 
 
     TNode * temp = node;
@@ -51,7 +51,7 @@ TNode* BST<T>:: minimum(TNode* node){
     return temp;
 }
 template <class T>
-TNode* BST<T>:: successor(TNode * node){
+TNode<T>* BST<T>:: successor(TNode<T> * node){
     TNode* temp1 = node;
     TNode* temp2 = nullptr;
 
@@ -71,11 +71,11 @@ TNode* BST<T>:: successor(TNode * node){
 
 }
 template <class T>
-TNode* BST <T>:: getRoot(){
+TNode<T>* BST <T>:: getRoot(){
     return root;
 }
 template <class T>
-TNode* BST :: createNode(){
+TNode<T>* BST<T> :: createNode(){
 
     TNode* newnode = new TNode();
 
@@ -86,7 +86,7 @@ TNode* BST :: createNode(){
 }
 
 template <class T>
-void BST<T> :: inOrder(TNode* node){
+void BST<T> :: inOrder(TNode<T>* node){
 
    if(node!= nullptr){
     inOrder(node->leftchild);
@@ -97,7 +97,7 @@ void BST<T> :: inOrder(TNode* node){
 
 }
 template <class T>
-void BST<T> :: preOrder(TNode* node){
+void BST<T> :: preOrder(TNode<T>* node){
 
    if(node!= nullptr){
     
@@ -109,7 +109,7 @@ void BST<T> :: preOrder(TNode* node){
 
 }
 template <class T>
-void BST <T>:: postOrder(TNode* node){
+void BST <T>:: postOrder(TNode<T>* node){
 
    if(node!= nullptr){
     
@@ -123,7 +123,7 @@ void BST <T>:: postOrder(TNode* node){
 
 //search
 template <class T>
-TNode* BST :: bstSearch(int value){
+TNode<T>* BST<T> :: bstSearch(int value){
 
     TNode* temp = root;
 
@@ -179,14 +179,13 @@ void BST<T> :: bstInsert(){
 
 }
 template <class T>
-void BST<T>:: bstDelete(TNode*<T> delnode){
+void BST<T>:: bstDelete(TNode<T>* delnode){
 
     // no node in tree
     // if(bstSearch(delnode->data)== NULL){
     //     cout << "Value not in tree\n";
     //     return;
-    // }
-
+    // } 
     if(delnode == NULL){
         cout << "Value not in tree\n";
         return;

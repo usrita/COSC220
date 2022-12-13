@@ -4,10 +4,10 @@
 #include "BST.cpp"
 
 
-template class Stack<Students*>;
-template class StackNode<Students*>;
+template class TNode<Students>;
+template class BST<Students>;
 
-template class Stack<int>;
-template class StackNode<int>;
+template class TNode<int>;
+template class BST<int>;
 
 
