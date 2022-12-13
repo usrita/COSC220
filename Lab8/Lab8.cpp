@@ -11,8 +11,8 @@ int main(){
 
     int user_input = 0, node_val;
     char sub_input = ' ';
-    TNode<T>* nodePtr;
-    BST<T> tree;
+    TNode<int>* intnodePtr;
+    BST<int> inttree;
 
     while (user_input != 4){
         
@@ -30,7 +30,7 @@ int main(){
             
             // insert
             case 1:
-                tree.bstInsert();
+                inttree.bstInsert();
                 break;
 
             //delete
@@ -38,8 +38,8 @@ int main(){
                 cout<< "Enter value to delete\n";
                 cin >>node_val;
 
-                nodePtr = tree.bstSearch(node_val);
-                tree.bstDelete(nodePtr);
+                intnodePtr = inttree.bstSearch(node_val);
+                inttree.bstDelete(intnodePtr);
                 break;
 
 
@@ -59,15 +59,15 @@ int main(){
             switch(sub_input){
                 //inorder
                 case 'a':
-                    tree.inOrder(tree.getRoot());
+                    inttree.inOrder(inttree.getRoot());
                     break;
 
                 case 'b':
-                     tree.postOrder(tree.getRoot());
+                     inttree.postOrder(inttree.getRoot());
                     break;
 
                 case 'c':
-                    tree.preOrder(tree.getRoot());
+                    inttree.preOrder(inttree.getRoot());
                     break;
             }
             break;
