@@ -10,7 +10,12 @@ Heap::Heap(){
         for (int i = 0; i < heapSize; i++)
             A[i] = B[i];
 
+        for(int i = 10; i < 100; i++)
+            A[i] = 0;
+        
         // call builheap function to build heap from array
+        buildHeap();
+
     }
 
 int Heap::parent(int i){
@@ -41,11 +46,11 @@ void Heap:: heapify(int i){
     int R = rightChild(i);
     int temp;
 
-    if (L <= heapSize && A[L] > A[i]){   
+    if (L < heapSize-1 && A[L] > A[i]){   
         Largest = L;
     } else
         Largest = i;
-    if (R <= heapSize && A[R] > A[Largest])
+    if (R < heapSize-1 && A[R] > A[Largest])
         Largest = R;
 
     if(Largest != i){
@@ -93,27 +98,34 @@ void Heap:: heapSort(){
     buildHeap();
     
     for (int i = size-1; i >= 1; i--){
+
         temp = A[0];
         A[0] = A[i];
         A[i] = temp;
 
-        size--;
+        heapSize--;
         heapify(0);
     }
+
+    // for (int i = 0; i < size; i++)
+    //     cout << A[i] << " ";
+    // cout << endl;
 }
 
 //find maximum value in heap
 int Heap::  maximum(){
+    buildHeap();
     int max = A[0];
-    for (int i = 0; i < heapSize; i++){
+    /*for (int i = 0; i < heapSize; i++){
         if (max < A[i])
             max = A[i];
-    }
+    }*/
     return max;
 }
 
 //extract max
 int Heap::extractmax(){
+    buildHeap();
     /*int index_max;
     for (int i = 0; i <= heapSize; i++){
         if (A[i] == maximum())
@@ -121,6 +133,7 @@ int Heap::extractmax(){
     }*/
     int max_value = A[0];
     A[0] = A[heapSize-1];
+    A[heapSize-1] = 0;
 
     //decrement size of heap
     heapSize--;
@@ -133,33 +146,26 @@ void Heap:: printHeap(){
 
     // pointer of array
     int * Aptr = A;
-    int parentt, left, right;
+    int j = 0;
 
     cout << endl;
-    for (int i = 0; i < heapSize; i++ ){
-
-        //set value at location obtained from parent function to parentt variable
-
-        /*parentt = A[parent(i)];
-        left = A[leftChild(i)];
-        right = A[rightChild(i)];*/
-
-        // if i use Aptr[i] or A[i] it keeps printing random values instead of elements
-        // from the constructor array..
-        //cout << Aptr[i] << "\n" <<
-            cout << "Node: " << Aptr[i] << "\n";
-            if (parent(i) < heapSize && i != 0)
-                cout << "Parent: "<< A[parent(i)] << "\n";
-            if (leftChild(i) < heapSize)
-                cout << "Leftchild: "<< A[leftChild(i)] << "\n";
-            if (rightChild(i) < heapSize)
-                cout << "Rightchild: "<< A[rightChild(i)] << "\n";
-            cout << endl;
+    if (heapSize > 1){
+        for (int i = 0; i < heapSize; i++ ){
+            //set value at location obtained from parent function to parentt variable
+                cout << "Node: " << Aptr[i] << "\n";
+                if (parent(i) < heapSize && i != 0)
+                    cout << "Parent: "<< A[parent(i)] << "\n";
+                if (leftChild(i) < heapSize)
+                    cout << "Leftchild: "<< A[leftChild(i)] << "\n";
+                if (rightChild(i) < heapSize)
+                    cout << "Rightchild: "<< A[rightChild(i)] << "\n";
+                cout << endl;
+        }
     }
-}
+    while (A[j]!= 0){
+        cout << A[j] << " ";
+        j++;
 
+    }
 
-void Heap::printArray() {
-    for (int i = 0; i < heapSize; i++)
-        cout << A[i] << ", ";
 }
