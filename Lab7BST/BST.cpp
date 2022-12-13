@@ -37,8 +37,6 @@ TNode* BST:: maximum(TNode* node){
 
 // to find successor
 TNode* BST:: minimum(TNode* node){
-
-
     TNode * temp = node;
 
     while(temp->leftchild != NULL){
@@ -84,36 +82,30 @@ TNode* BST :: createNode(){
 
 
 void BST :: inOrder(TNode* node){
-
    if(node!= nullptr){
     inOrder(node->leftchild);
     node->printNode();
     inOrder(node->rightchild);
-
    }
-
 }
 
-void BST :: preOrder(TNode* node){
-
-   if(node!= nullptr){
-    
+void BST :: preOrder(TNode* node)
+{
+   if(node!= nullptr)
+   {
     node->printNode();
     preOrder(node->leftchild);
     preOrder(node->rightchild);
-
    }
-
 }
 
 void BST :: postOrder(TNode* node){
 
-   if(node!= nullptr){
-    
+   if(node!= nullptr)
+   {
     postOrder(node->leftchild);
     postOrder(node->rightchild);
     node->printNode();
-
    }
 
 }

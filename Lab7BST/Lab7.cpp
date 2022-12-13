@@ -44,7 +44,6 @@ int main(){
 
             //print
             case 3:
-
             cout << "a. in order, b. post order, c. preorder \n";
 
             cout << "What would you like to do? \n";
@@ -71,7 +70,6 @@ int main(){
                     break;
             }
             break;
-
 
             case 4:
             cout << "Goodbye\n";
