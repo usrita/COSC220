@@ -19,8 +19,8 @@ cout << "A" << A << endl << endl;
 cout << ptr << endl;
 cout << *ptr << "\n\n";
 
-cout << ptr + 1<< endl;
-cout << "HERE" << *(ptr+1) << "\n\n";
+cout << "ptr + 1" << ptr + 1<< endl;
+cout << "**(ptr+1)" << *(ptr+1) << "\n\n";
 
 cout << ptr[1] << endl;
 cout << *(ptr[1]) << "\n\n";
